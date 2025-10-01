@@ -1,0 +1,12 @@
+# Visual Studio cache
+.vs/
+*.vsidx
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+venv/
+env/
+.env

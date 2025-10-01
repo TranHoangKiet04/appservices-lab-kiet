@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Service Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quản lý User (Azure App Service)</h1>
+    <form method="post">
+        <input type="text" name="name" placeholder="Nhập tên" required>
+        <input type="text" name="phone" placeholder="Nhập số điện thoại" required>
+        <button type="submit">Thêm</button>
+    </form>
+
+    <h2>Danh sách Users trong Azure SQL</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Điện thoại</th>
+        </tr>
+        {% for u in users %}
+        <tr>
+            <td>{{ u[0] }}</td>
+            <td>{{ u[1] }}</td>
+            <td>{{ u[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
