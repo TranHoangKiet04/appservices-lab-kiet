@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 AZURE_SQL_CONNECTION = (
-    "Driver={ODBC Driver 18 for SQL Server};"
+    "Driver={ODBC Driver 17 for SQL Server};"
     "Server=tcp:kietsqlserver.database.windows.net,1433;"
     "Database=UserDB;"
     "Uid=sqladmin;"
@@ -56,6 +56,8 @@ def index():
 
     return render_template("index.html", users=rows)
 
+import os
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
